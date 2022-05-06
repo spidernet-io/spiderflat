@@ -1,0 +1,38 @@
+kind: Cluster
+apiVersion: kind.x-k8s.io/v1alpha4
+networking:
+  kubeProxyMode: {{ kube_proxy_mode }}
+  disableDefaultCNI: {{ disable_default_cni }}
+  ipFamily: {{ ip_family }}
+  apiServerAddress: 127.0.0.1
+{%- if ip_family == "ipv4" %}
+  podSubnet: "172.20.0.0/16"
+  serviceSubnet: "172.31.0.0/16"
+{%- elif ip_family == "ipv6" %}
+  podSubnet: "fd01::/48"
+  serviceSubnet: "fd99::/108"
+{%- else %}
+  podSubnet: "172.20.0.0/16,fd01::/48"
+  serviceSubnet: "172.31.0.0/16,fd99::/108"
+{%- endif %}
+kubeadmConfigPatches:
+  - |
+    kind: ClusterConfiguration
+    metadata:
+      name: config
+    apiServer:
+        extraArgs:
+          enable-admission-plugins: NodeRestriction,MutatingAdmissionWebhook,ValidatingAdmissionWebhook
+    etcd:
+      local:
+        dataDir: "/tmp/lib/etcd"
+
+nodes:
+  - role: control-plane
+    image: kindest/node:{{ kind_image_tag }}
+  - role: worker
+    image: kindest/node:{{ kind_image_tag }}
+  {%- if standard_cluster != "true" %}
+  - role: worker
+    image: kindest/node:{{ kind_image_tag }}
+  {%- endif %}
