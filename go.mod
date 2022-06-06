@@ -3,7 +3,7 @@ module github.com/spidernet-io/spiderpool
 go 1.17
 
 require (
-	github.com/containernetworking/cni v1.1.0
+	github.com/containernetworking/cni v1.1.1
 	github.com/containernetworking/plugins v1.1.1
 	github.com/go-openapi/errors v0.20.2
 	github.com/go-openapi/loads v0.21.1
