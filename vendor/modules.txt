@@ -119,8 +119,8 @@ github.com/go-openapi/spec
 # github.com/go-openapi/strfmt v0.21.2
 ## explicit; go 1.13
 github.com/go-openapi/strfmt
-# github.com/go-openapi/swag v0.21.1
-## explicit; go 1.11
+# github.com/go-openapi/swag v0.22.0
+## explicit; go 1.18
 github.com/go-openapi/swag
 # github.com/go-openapi/validate v0.21.0
 ## explicit; go 1.14
@@ -540,7 +540,7 @@ gopkg.in/natefinch/lumberjack.v2
 # gopkg.in/yaml.v2 v2.4.0
 ## explicit; go 1.15
 gopkg.in/yaml.v2
-# gopkg.in/yaml.v3 v3.0.0-20210107192922-496545a6307b
+# gopkg.in/yaml.v3 v3.0.1
 ## explicit
 gopkg.in/yaml.v3
 # k8s.io/api v0.24.0
