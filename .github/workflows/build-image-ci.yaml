@@ -243,7 +243,7 @@ jobs:
 
       # Upload artifact digests
       - name: Upload artifact digests
-        uses: actions/upload-artifact@v3.0.0
+        uses: actions/upload-artifact@v3.1.2
         with:
           name: image-digest-${{ matrix.name }}
           path: image-digest
@@ -251,7 +251,7 @@ jobs:
 
       # Upload artifact race images tar
       - name: Upload artifact race image tar
-        uses: actions/upload-artifact@v3.0.0
+        uses: actions/upload-artifact@v3.1.2
         with:
           name: image-tar-${{ matrix.name }}
           path: /tmp/${{ matrix.name }}-race.tar
