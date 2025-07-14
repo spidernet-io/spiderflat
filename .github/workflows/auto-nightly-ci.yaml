@@ -184,7 +184,7 @@ jobs:
           make load-image-to-kind  E2E_CLUSTER_NAME=${{ env.CLUSTER_NAME }}
 
       - name: Helm Install Spiderpool
-        uses: nick-invision/retry@v2
+        uses: nick-invision/retry@v3
         with:
           timeout_minutes: 10
           max_attempts: 3
