@@ -18,7 +18,7 @@ require (
 	github.com/onsi/gomega v1.19.0
 	github.com/sasha-s/go-deadlock v0.3.1
 	github.com/spf13/cobra v1.4.0
-	github.com/spf13/pflag v1.0.5
+	github.com/spf13/pflag v1.0.7
 	github.com/spidernet-io/e2eframework v0.0.0-20220505160401-5b06a8087c95
 	go.uber.org/zap v1.21.0
 	golang.org/x/net v0.0.0-20220425223048-2871e0cb64e4
